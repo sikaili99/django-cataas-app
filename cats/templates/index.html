@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row m-2">
-    {% for cat in cats %}
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img alt="Cat" class="card-img-top" src="{{cat.image_url}}">
-            <div class="card-body">
-                <h5 class="card-title">{{cat.name}}</h5>
-                <p class="card-text"></p>
-            </div>
+
+
+    <div class="row">
+        <div class="col-12 ">
+                <img class="img-fluid img-thumbnail mx-auto d-block" src="{{image_url}}" alt="cataas">
+
+        </div>
+        <br>
+        <br>
+        <div>
+            <h2 class="text-center">Refresh page to view random urls</h2>
+            <h5 class="text-center">{{image_url}}</h5>
         </div>
     </div>
-    {% endfor %}
-</div>
+
 {% endblock %}

@@ -1,15 +1,20 @@
-from django.http import HttpResponse
 from django.shortcuts import render
-import requests
-from .models import Cats
-
-# Home page with showing cats from SQLite db
+from random import choice
 
 
 def index(resquest):
+    random_tags = choice(['cute', 'hello', 'beautiful', 'Programmer', 'codes'])
 
-    cats = Cats.objects.all()
-    return render(resquest, 'index.html', {'cats': cats})
+    # Random urls are generated here
+    url_list = ['https://cataas.com/cat',
+               'https://cataas.com/cat/cute',
+               'https://cataas.com/cat/gif',
+               f'https://cataas.com/cat/cute/says/{random_tags}',
+               f'https://cataas.com/cat/{random_tags}/says/{random_tags}'
+               ]
+    url = choice(url_list)
+
+    return render(resquest, 'index.html', {'image_url': url})
 
 
 def search(request):
@@ -20,6 +25,3 @@ def search(request):
 
     else:
         return render(request, 'search.html', {'message': 'Enter a tag to search for a cat'})
-
-
-
