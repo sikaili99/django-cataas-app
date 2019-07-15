@@ -5,10 +5,12 @@
     {% for cat in cats %}
     <div class="col">
         <div class="card" style="width: 18rem;">
-            <img alt="Cat" class="card-img-top" src="{{cat.image_url}}">
+            <img alt="Cat" class="card-img-top" src="https://cataas.com/cat/{{cat.id}}">
             <div class="card-body">
-                <h5 class="card-title">{{cat.name}}</h5>
-                <p class="card-text"></p>
+                {% for tag in cat.tags %}
+                     <h5 class="card-title">{{tag}}</h5>
+                {% endfor %}
+                <p class="card-text"><p>Created:  {{ cat.created_at|date:"c"  }}</p></p>
             </div>
         </div>
     </div>

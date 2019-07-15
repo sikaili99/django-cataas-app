@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="row center m-2">
-        <div class="col ">
-            {% if tag %}
-                <img class="img-fluid img-thumbnail mx-auto d-block" src="https://cataas.com/cat/says/{{tag}}" alt="cataas">
-            {%endif%}
-            <!--error message here-->
-            <h2>{{message}}</h2>
+<div class="row m-2">
+    {% for cat in results_tag %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img alt="Cat" class="card-img-top" src="https://cataas.com/cat/{{cat.id}}">
+            <div class="card-body">
+                {% for tag in cat.tags %}
+                     <h5 class="card-title">{{tag}}</h5>
+                {% endfor %}
+                <p class="card-text"><p>Created:  {{ cat.created_at|date:"c"  }}</p></p>
+            </div>
         </div>
     </div>
-
+    {% endfor %}
+</div>
 {% endblock %}
