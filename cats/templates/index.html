@@ -3,12 +3,12 @@
 {% block content %}
 <div class="row m-2">
     {% for cat in cats %}
-    <div class="col">
+    <div class="col img-body">
         <div class="card" style="width: 18rem;">
-            <img alt="Cat" class="card-img-top" src="https://cataas.com/cat/{{cat.id}}">
+            <img alt="Cat" class="card-img-top img-responsive" src="https://cataas.com/cat/{{cat.id}}">
             <div class="card-body">
                 {% for tag in cat.tags %}
-                     <h5 class="card-title">{{tag}}</h5>
+                     <h5 class="card-title btn btn-primary">{{tag}}</h5>
                 {% endfor %}
                 <p class="card-text"><p>Created:  {{ cat.created_at|date:"c"  }}</p></p>
             </div>
