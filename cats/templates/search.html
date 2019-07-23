@@ -5,13 +5,15 @@
     {% for cat in results_tag %}
     <div class="col img-body">
         <div class="card" style="width: 18rem;">
-            <img alt="Cat" class="card-img-top img-responsive" src="https://cataas.com/cat/{{cat.id}}">
-            <div class="card-body">
-                {% for tag in cat.tags %}
-                     <h5 class="card-title btn btn-primary">{{tag}}</h5>
-                {% endfor %}
-                <p class="card-text"><p>Created:  {{ cat.created_at|date:"c"  }}</p></p>
-            </div>
+             <a href="{% url 'view_cat' cat.id  %}">
+                <img alt="Cat" class="card-img-top img-responsive" src="https://cataas.com/cat/{{cat.id}}">
+                <div class="card-body">
+                    {% for tag in cat.tags %}
+                         <h5 class="card-title btn btn-primary">{{tag}}</h5>
+                    {% endfor %}
+                    <p class="card-text"><p>Created:  {{ cat.created_at|date:"c"  }}</p></p>
+                </div>
+             </a>
         </div>
     </div>
     {% endfor %}

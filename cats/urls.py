@@ -5,4 +5,5 @@ from . import views  # Import view from the current folder
 urlpatterns = [
     path('', views.index, name='index'),
     path('search/result', views.search,  name='search'),
+    path('view/cat/<cat_id>', views.view_cat, name='view_cat')
 ]
