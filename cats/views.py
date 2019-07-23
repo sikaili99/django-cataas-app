@@ -21,3 +21,10 @@ def search(request):
 
     else:
         return render(request, 'search.html', {'message': 'Enter a tag to search for a cat'})
+
+
+def view_cat(request, cat_id):
+
+    cat_url = f'{my_url}cat/{cat_id}'
+    return render(request, 'view_cat.html', {'view_cat': cat_url})
+
