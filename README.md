@@ -17,4 +17,6 @@ The app is able to search a cat from the cataas API with the provided tag in the
 
 The app is able to view a single cat by clicking on the link.
 
+<b>DEMO</b> deployed on heroku <a href="https://cataas.herokuapp.com/">demo app</a>
+
 You can visit the cataas API on this link <a href="https://cataas.com/">https://cataas.com/</a>
