@@ -12,7 +12,7 @@
                     {% for tag in cat.tags %}
                          <h5 class="card-title btn btn-primary">{{tag}}</h5>
                     {% endfor %}
-                    <p class="card-text"><p>Created:  {{ cat.created_at.upper|date:'Y-m-d H:i' }}</p></p>
+                    <p class="card-text"><p>Posted:  {{ cat.created_at|slice:":10" }}</p></p>
                 </div>
             </a>
 
