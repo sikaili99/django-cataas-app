@@ -5,9 +5,8 @@ my_url = 'https://cataas.com/'
 
 def index(resquest):
     # Get first 9 cats on the home page
-    url = requests.get(f'{my_url}api/cats?limit=9')
-    response = url.json()
-
+    response = requests.get(f'{my_url}api/cats?limit=9').json()
+    
     return render(resquest, 'index.html', {'cats': response})
 
 
